@@ -1,4 +1,4 @@
-FROM postgres:alpine
+FROM postgres:alpine3.19
 
 # Add infisical executable
 RUN apk add --no-cache bash curl && curl -1sLf \
