@@ -6,5 +6,4 @@ RUN apk add --no-cache bash curl && curl -1sLf \
 && apk add infisical
 
 # Inject env variable into process
-ENTRYPOINT ["infisical", "run", "--path=${INFISICAL_PATH:-/}", "--", "docker-entrypoint.sh"]
-CMD ["postgres"]
+ENTRYPOINT ["sh", "-c", "infisical run --env=${ENV} --path=${INFISICAL_PATH:-/} -- docker-entrypoint.sh postgres"]
